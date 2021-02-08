@@ -20,20 +20,20 @@ class DuckProgressBarUi : BasicProgressBarUI() {
     if (duckX <= 0) {
       duckX = 0
       velocity = 1
-    } else if (duckX >= maxX - DUCK_WIDTH) {
-      duckX = maxX - DUCK_WIDTH
+    } else if (duckX >= maxX - SATRIA_WIDTH) {
+      duckX = maxX - SATRIA_WIDTH
       velocity = -1
     }
   }
 
   private fun drawIcon(g2d: Graphics2D, c: JComponent) {
-    val scaledIcon = if (velocity > 0) DUCK_ICON else RDUCK_ICON
+    val scaledIcon = if (velocity > 0) SATRIA_ICON else RSATRIA_ICON
     scaledIcon.paintIcon(c, g2d, duckX, -JBUI.scale(6))
   }
 
   private fun drawBackground(g2d: Graphics2D, c: JComponent) {
     val r = Rectangle(progressBar.size)
-    g2d.paint = DUCK_COLOR
+    g2d.paint = SATRIA_COLOR
     g2d.fill(RoundRectangle2D.Float(0f, 0f, r.width.toFloat(), r.height.toFloat(), 0f, 0f))
   }
 
